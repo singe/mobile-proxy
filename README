@@ -5,6 +5,13 @@ This work was originally presented in slides 27-30 of http://www.slideshare.net/
 This is published under the GPL v3.
 By Singe at Sensepost
 
+INSTALLING
+----------
+
+You'll need to put the proxy.pac file on a webserver somewhere. If you want to use the dynamic version, you'll need PHP running on a webserver hosting proxy.php.
+
+Currently, both are configured to use the default googlesharing proxy, and my blackhole proxy. I'd recommend changing those.
+
 You can install this on an iOS device, for use over the mobile network by editing /Library/Preferences/SystemConfiguration/preferences.plist and adding the ProxyAutoConfigURLString as per below:
 
 <dict>
@@ -20,3 +27,11 @@ You can install this on an iOS device, for use over the mobile network by editin
 		<string>https://<host>/proxy.php</string>
 </dict>
 
+CONFIGURING
+-----------
+
+The included python file will run a black hole HTTP server to make WebKit respect "blocked" addresses. I'd recommend running your own. It's pretty safe, does very little, and drops privileges to reduce chances of exploitation doing anything.
+
+Additionally, by default it uses proxy.googlesharing.net. You should also run your own GoogleSharing server, both so there will be more, and to reduce load on that proxy.
+
+Once done, you'll need to edit the proxy.* files to make that change.
