@@ -1,0 +1,22 @@
+This is a set of tools to help create a privacy enhancing proxy for devices which support proxy.pac files. While this includes most web-browsers, it is specifically targeting mobile browsers, which do not support advanced add-on functionality.
+
+This work was originally presented in slides 27-30 of http://www.slideshare.net/sensepost/a-brave-new-world-9962265
+
+This is published under the GPL v3.
+By Singe at Sensepost
+
+You can install this on an iOS device, for use over the mobile network by editing /Library/Preferences/SystemConfiguration/preferences.plist and adding the ProxyAutoConfigURLString as per below:
+
+<dict>
+	<key>HTTPEnable</key>
+		<integer>0</integer>
+	<key>HTTPProxyType</key>
+		<integer>2</integer>
+	<key>HTTPSEnable</key>
+		<integer>0</integer>
+	<key>ProxyAutoConfigEnable</key>
+		<integer>1</integer>
+	<key>ProxyAutoConfigURLString</key>
+		<string>https://<host>/proxy.php</string>
+</dict>
+
