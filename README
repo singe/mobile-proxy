@@ -35,3 +35,12 @@ The included python file will run a black hole HTTP server to make WebKit respec
 Additionally, by default it uses proxy.googlesharing.net. You should also run your own GoogleSharing server, both so there will be more, and to reduce load on that proxy.
 
 Once done, you'll need to edit the proxy.* files to make that change.
+
+USE
+---
+
+proxy.php support the following options:
+https://<whereever>/proxy.php?
+	proxy=<>	-setsdefaultproxy
+	&port=<>	-setsdefaultproxyport
+	&socks		–makesitaSOCKSproxy
